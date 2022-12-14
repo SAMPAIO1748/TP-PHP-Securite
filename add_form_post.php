@@ -11,9 +11,9 @@
 
 <body>
 
-    <form action="" method="post">
+    <form action="add_post.php" method="post">
         <label for="title">Titre de l'article</label>
-        <input type="text" name="article" id="article">
+        <input type="text" name="title" id="title">
         <label for="content">Contenu de l'article</label>
         <textarea name="content" id="content" cols="30" rows="10"></textarea>
         <input type="submit" value="Enregistrer">
