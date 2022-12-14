@@ -26,7 +26,7 @@ if (empty($_POST['email']) && empty($_POST['password'])) {
     if ($resultat) {
         $_SESSION['email'] = $resultat["email"];
         $_SESSION['name'] = $resultat['name'];
-        $_SESSION['firstname'] = $resultat['fisrname'];
+        $_SESSION['firstname'] = $resultat['firstname'];
         header('Location: index.php');
     } else {
         echo "Vous n'êtes pas inscrit sur ce site.";
