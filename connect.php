@@ -2,6 +2,10 @@
 
 session_start();
 
+// Pour éviter le attaques de force brtue 
+//(càd des milliers de tentatives de connections par un hackeur en moins d'une seconde)
+// j'utilise la fonction sleep qui va mettre un temps d'attente de 1 seconde entre le temps de soumission
+// du formualire et le temps d'éxécution du formulaire, ce qui va foretement ralentir le hackeur. 
 sleep(1);
 
 if (empty($_POST['email']) && empty($_POST['password'])) {

@@ -11,6 +11,15 @@
 
 <body>
 
+    <?php
+
+    session_start();
+
+    if (!isset($_SESSION['email']))
+        header("Location: connct_form.php");
+    ?>
+
+
     <form action="add_post.php" method="post">
         <label for="title">Titre de l'article</label>
         <input type="text" name="title" id="title">

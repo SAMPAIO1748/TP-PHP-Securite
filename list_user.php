@@ -11,6 +11,14 @@
 
 <body>
 
+    <?php
+
+    session_start();
+
+    if (!isset($_SESSION['email']))
+        header("Location: connct_form.php");
+    ?>
+
     <h1>Liste des utilisateurs</h1>
 
     <?php

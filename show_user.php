@@ -13,6 +13,12 @@
 
     <?php
 
+    session_start();
+
+    if (!isset($_SESSION['email']))
+        header("Location: connct_form.php");
+
+
     $id = $_GET['id'];
 
     $bdd = new PDO("mysql:host=localhost;dbname=securite", "root", "root");
