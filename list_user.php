@@ -18,12 +18,12 @@
     // Exercice Afficher la liste des users de la bdd (afficher nom et prenom)
 
     $bdd = new PDO("mysql:host=localhost;dbname=securite", 'root', 'root');
-    $sql = "SELECT name, firstname FROM user";
+    $sql = "SELECT name, firstname, id FROM user";
     $requete = $bdd->prepare($sql);
     $requete->execute();
     $resultat = $requete->fetchAll();
 
-    //var_dump($resultat);
+    var_dump($resultat);
 
     ?>
 
@@ -40,7 +40,7 @@
                 <?php
 
                 foreach ($resultat as $user) {
-                    echo "<tr><td>" . $user['name'] . "</td><td>" . $user['firstname'] . "</td></tr>";
+                    echo "<tr><td><a href='show_user.php?id=" . $user['id'] . "'>" . $user['name'] . "</a></td><td>" . $user['firstname'] . "</td></tr>";
                 }
 
                 ?>
