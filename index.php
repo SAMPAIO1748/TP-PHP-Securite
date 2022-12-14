@@ -50,7 +50,7 @@
             <?php
 
             foreach ($resultat as $post) {
-                echo '<tr><td>' . $post['title'] . "</td><td>" . $post["content"] . "</td></tr>";
+                echo '<tr><td><a href="show_post.php?id=' . $post['id'] . '">'  . $post['title'] . "</a></td><td>" . $post["content"] . "</td></tr>";
             }
 
             ?>
