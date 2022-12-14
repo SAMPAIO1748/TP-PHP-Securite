@@ -7,3 +7,9 @@ h1{
 td{
     text-align: center;
 }
+.flex{
+    display: flex;
+}
+.justify-center{
+    justify-content: center;
+}
