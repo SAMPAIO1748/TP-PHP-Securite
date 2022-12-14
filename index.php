@@ -58,6 +58,8 @@
         </tbody>
     </table>
 
+    <a href="add_form_post.php">Ajouter un article</a>
+
 </body>
 
 </html>
