@@ -12,3 +12,5 @@ $requete->execute();
 
 // redirection vers la page index.php
 header('Location: index.php');
+
+// Exercice : pouvoir mettre à jour le compte de l'utilisateur connecté et uniquement lui.
