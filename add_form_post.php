@@ -19,6 +19,8 @@
         <input type="submit" value="Enregistrer">
     </form>
 
+    <!-- Faire une page d'inscription d'un user -->
+
 </body>
 
 </html>

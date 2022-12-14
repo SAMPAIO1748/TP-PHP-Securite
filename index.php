@@ -9,7 +9,24 @@
     <title>Accueil TP sécurité</title>
 </head>
 
+<?php
+
+session_start();
+
+?>
+
 <h1>Blog TP Sécurité Aston</h1>
+
+<?php
+
+if (isset($_SESSION['email'])) {
+    echo '<h2>Bienvenue sur notre site ' . $_SESSION['firstname'] . " " . $_SESSION['name'] . "</h2>";
+}
+?>
+
+
+
+<a href="login_form.php">S'inscrire</a>
 
 <body>
 
