@@ -32,11 +32,15 @@ if (empty($_POST['title']) && empty($_POST['content']) && empty($_FILES['image']
             $image = $_FILES['image']['tmp_name'];
             $type = $_FILES['image']['type'];
 
+            /*
+                Code d'upload sécurisé
             // Détecte le type du contenu d'un fichier.
-            // mime_content_type($image);
+            $mime = mime_content_type($_FILES['image']['tmp_name']);
 
-            // Normalement il faudrait faire les tests en utilisant le mime du fichier
-            if ($type == "image/jpeg" || $type == "image/jpeg" || $type == "image/png") {
+            if (in_array($mime, ["image/jpeg", "image/jpeg", "image/png"])) {
+
+            */ // Code non sécurisé, Normalement il faudrait faire les tests en utilisant le mime du fichier
+            if (in_array($type, ["image/jpeg", "image/jpeg", "image/png"])) {
 
                 // déplacement du fichier dans le dossier "img/"
                 if (move_uploaded_file($image, $dossier . $nom_img)) {
