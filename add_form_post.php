@@ -19,12 +19,18 @@
         header("Location: connct_form.php");
     ?>
 
+    <!-- ////////////////////////////////////////////// Pour permettre le traitement du fichier -->
+    <form action="add_post.php" method="post" enctype="multipart/form-data">
 
-    <form action="add_post.php" method="post">
         <label for="title">Titre de l'article</label>
         <input type="text" name="title" id="title">
+
         <label for="content">Contenu de l'article</label>
         <textarea name="content" id="content" cols="30" rows="10"></textarea>
+
+        <label for="image">Image de l'article</label>
+        <input type="file" name="image" id="image">
+
         <input type="submit" value="Enregistrer">
     </form>
 
