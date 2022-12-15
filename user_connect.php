@@ -58,6 +58,8 @@
     ?>
 
     <a href="update_form_user.php">Modifier mon compte</a>
+    <!-- Exercice : créer un bouton sur cette page qui permet de supprimer le compte de la personne connectée -->
+    <a href="delete_user.php">Supprimer mon compte</a>
 </body>
 
 </html>
