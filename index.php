@@ -89,7 +89,7 @@
 
     <?php
 
-    if ($_SESSION['role'] === "admin") {
+    if (isset($_SESSION["role"]) && $_SESSION['role'] === "admin") {
         echo '<a href="add_form_post.php">Ajouter un article</a>';
     }
 

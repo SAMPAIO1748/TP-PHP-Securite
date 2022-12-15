@@ -12,7 +12,7 @@ if (empty($_POST['name']) && empty($_POST['firstname']) && empty($_POST['email']
     echo "Le champ password est obligatoire";
 } else {
     $bdd = new PDO("mysql:host=localhost;dbname=securite", "root", "root");
-    $sql = "INSERT INTO user (name, firstname, email, password) VALUES (:name, :firstname, :email, :password)";
+    $sql = "INSERT INTO user (name, firstname, email, password, role) VALUES (:name, :firstname, :email, :password, 'user')";
     $requete = $bdd->prepare($sql);
     $requete->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
     $requete->bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);

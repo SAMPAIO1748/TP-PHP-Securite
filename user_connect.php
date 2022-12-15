@@ -48,6 +48,15 @@
         </table>
     </div>
 
+
+    <?php
+
+    if (isset($_SESSION['role']) && $_SESSION['role'] === "admin") {
+        echo "<a href='list_user.php'>Liste des users</a>";
+    }
+
+    ?>
+
     <a href="update_form_user.php">Modifier mon compte</a>
 </body>
 
