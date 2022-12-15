@@ -31,6 +31,8 @@
 
     <h1>Article n°<?php echo $resultat['id'] ?></h1>
 
+    <img src="<?php echo "img/" . $resultat['img'] ?>" alt="<?php echo $resultat['title']  ?>">
+
     <table>
         <thead>
             <tr>
