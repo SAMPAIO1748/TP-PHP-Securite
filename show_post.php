@@ -13,6 +13,8 @@
 
     <?php
 
+    session_start();
+
     $id = $_GET['id'];
 
     $bdd = new PDO('mysql:host=localhost;dbname=securite', 'root', 'root');
@@ -31,7 +33,7 @@
 
     ?>
 
-    <h1>Article n°<?php echo $resultat[0]['id'] ?></h1>
+    <h1>Article n°<?php echo $resultat[0][0] ?></h1>
 
     <img src="<?php echo "img/" . $resultat[0]['img'] ?>" alt="<?php echo $resultat[0]['title']  ?>">
 
@@ -67,7 +69,19 @@
                 $comment['firstname'] . "</h2><hr>";
     }
 
+    if (isset($_SESSION['email'])) {
+        echo ' 
+        <form action="add_comment.php" method="post">
+            <input type="number" name="id_post" id="id_post" value="' . $resultat[0][0]  . '" style="display: none">
+            <input type="number" name="id_user" id="id_user" value="' .  $_SESSION["id"] . '" style="display: none">
+            <label for="contenue">Contenu du commentaire</label>
+            <input type="text" name="contenue" id="contenue">
+            <input type="submit" value="Commenter">
+        </form>';
+    }
+
     ?>
+
 
 
 
