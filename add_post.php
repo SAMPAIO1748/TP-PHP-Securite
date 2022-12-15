@@ -34,7 +34,7 @@ if (empty($_POST['title']) && empty($_POST['content']) && empty($_FILES['image']
 
             /*
                 Code d'upload sécurisé
-            // Détecte le type du contenu d'un fichier.
+            // Détecte le type du contenu d'un fichier de façon certaine
             $mime = mime_content_type($_FILES['image']['tmp_name']);
 
             if (in_array($mime, ["image/jpeg", "image/jpeg", "image/png"])) {

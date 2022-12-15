@@ -31,7 +31,7 @@
 
     ?>
 
-    <form action="update_post.php" method="post">
+    <form action="update_post.php" method="post" enctype="multipart/form-data">
         <input type="number" name="id" id="id" value="<?php echo $resultat['id']; ?>" style="display: none">
         <label for="title">Titre</label>
         <input type="text" name="title" id="title" value="<?php echo $resultat['title']; ?>">
@@ -43,6 +43,8 @@
 
             ?>
         </textarea>
+        <label for="image">Image du fichier</label>
+        <input type="file" name="image" id="">
         <input type="submit" value="Valider">
     </form>
 
