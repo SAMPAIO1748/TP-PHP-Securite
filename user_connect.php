@@ -47,6 +47,8 @@
             </tbody>
         </table>
     </div>
+
+    <a href="update_form_user.php">Modifier mon compte</a>
 </body>
 
 </html>

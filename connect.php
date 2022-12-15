@@ -16,7 +16,7 @@ if (empty($_POST['email']) && empty($_POST['password'])) {
     echo "Le champ mot de passe est obligatoire";
 } else {
     $bdd = new PDO("mysql:host=localhost;dbname=securite", "root", "root");
-    $sql = "SELECT email, name, firstname, id FROM user WHERE email = :email AND password =:password";
+    $sql = "SELECT * FROM user WHERE email = :email AND password =:password";
     $requete = $bdd->prepare($sql);
     $requete->bindValue(":email", $_POST['email'], PDO::PARAM_STR);
     $requete->bindValue(":password", $_POST['password'], PDO::PARAM_STR);
@@ -28,6 +28,7 @@ if (empty($_POST['email']) && empty($_POST['password'])) {
         $_SESSION['name'] = $resultat['name'];
         $_SESSION['firstname'] = $resultat['firstname'];
         $_SESSION['id'] = $resultat['id'];
+        $_SESSION['role'] = $resultat["role"];
         header('Location: index.php');
     } else {
         echo "Vous n'êtes pas inscrit sur ce site.";
