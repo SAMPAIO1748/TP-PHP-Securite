@@ -2,6 +2,10 @@
 
 session_start();
 
+if (!isset($_SESSION['email']) || $_SESSION['role'] !== "admin") {
+    header('Location: connct_form.php');
+}
+
 $bdd = new PDO("mysql:host=localhost;dbname=securite", "root", "root");
 $sql = "UPDATE post SET title = :title, content = :content WHERE id = :id";
 $requete = $bdd->prepare($sql);

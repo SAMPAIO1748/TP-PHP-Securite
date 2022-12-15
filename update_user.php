@@ -2,6 +2,10 @@
 
 session_start();
 
+if (!isset($_SESSION['id'])) {
+    header("Location: connct_form.php");
+}
+
 $bdd = new PDO("mysql:host=localhost;dbname=securite", 'root', "root");
 $sql = "UPDATE user SET name = :name, firstname = :firstname, email = :email, password = :password WHERE id = :id";
 $requete = $bdd->prepare($sql);
