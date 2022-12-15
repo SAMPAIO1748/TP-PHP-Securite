@@ -79,10 +79,12 @@
             <?php
 
             foreach ($resultat as $post) {
+                // on donne accés à la modification de post uniquement aux users qui ont le rôle admin.
                 if (isset($_SESSION['email']) && $_SESSION['role'] === "admin") {
                     echo '<tr><td><a href="show_post.php?id=' . $post['id'] . '">'  . $post['title'] .
                         "</a></td><td>" . $post["content"] . "</td><td><a href='update_form_post.php?id=" .
-                        $post["id"] . "'>Modifier le post</a>" . "</tr>";
+                        $post["id"] . "'>Modifier le post</a></td><td><a href='delete_post.php?id=" .
+                        $post['id'] . "'>Supprimer le post</a></td></tr>";
                 } else {
                     echo '<tr><td><a href="show_post.php?id=' . $post['id'] . '">'  . $post['title'] . "</a></td><td>" . $post["content"] . "</td></tr>";
                 }
